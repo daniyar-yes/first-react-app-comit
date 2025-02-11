@@ -1,46 +1,39 @@
-import "./App.css";
-import MyButton from "./components/MyButton";
 import { useState } from "react";
 
-
-
-function App() {
-
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => {
-      setCount(count + 1)
-    }
-
-
-  const products = [
-    { title: 'Cabbage', isFruit: 1, id: 1 },
-    { title: 'Garlic', isFruit: false, id: 2 },
-    { title: 'Apple', isFruit: 0, id: 3 },
-  ];
-
-
-
-
-  const listItems = products.map(product =>
-    <li key={product.id}
-        style={{
-        color: product.isFruit ? 'magenta' : 'darkgreen'
-        }}>
-      {product.title}
-    </li>
+const Square = ({ value, onSquareClick }) => {
+  return (
+    <button className="square" onClick={onSquareClick}>
+      {value}
+    </button>
   );
+};
 
+export default function Board() {
+  const [squares, setSquares] = useState(Array(9).fill(null));
+
+  function handleClick() {
+    const nextSquares = squares.slice();
+    nextSquares[0] = "X";
+    setSquares(nextSquares);
+  }
 
   return (
     <>
-      <ul>{listItems}</ul>
-
-      <MyButton count={count} onClick={handleClick}/>
-      <MyButton count={count} onClick={handleClick}/>
-
+      <div className="board-row">
+        <Square value={squares[0]} onSquareClick={handleClick} />
+        <Square value={squares[1]} onSquareClick={handleClick} />
+        <Square value={squares[2]} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[3]} />
+        <Square value={squares[4]} />
+        <Square value={squares[5]} />
+      </div>
+      <div className="board-row">
+        <Square value={squares[6]} />
+        <Square value={squares[7]} />
+        <Square value={squares[8]} />
+      </div>
     </>
   );
 }
-
-export default App
