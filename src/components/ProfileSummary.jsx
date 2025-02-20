@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 const ProfileSummary = ({ data }) => {
-    console.log('data from ProfileSummary:', data)
+
   return (
     <div className="profile-summary">
       { data?.imageData ?
@@ -11,7 +11,7 @@ const ProfileSummary = ({ data }) => {
       <p style={{border: '3px solid pink'}}>Imagedata is missing</p>
       }
       <div className="profile-description">
-        <h4>{data.userData.name}</h4>
+        <h2>{data.userData.name}</h2>
         <p>{data.userData.bio}</p>
       </div>
     </div>
