@@ -6,17 +6,17 @@ const Posts = ({ data }) => {
     (post) => post.status === "published"
   );
 
-  const listItems = postsForPublishing.map((post) => (
+  const listItems = postsForPublishing.map((post) => 
     <li key={post.id}>
       <h4>{post.title}</h4>
       <article>{post.article}</article>
     </li>
-  ));
+  );
 
   return (
-    <div className="posts-container">
+    <main className="posts-container">
       <ul>{listItems}</ul>
-    </div>
+    </main>
   );
 };
 

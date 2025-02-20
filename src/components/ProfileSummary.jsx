@@ -3,7 +3,7 @@
 const ProfileSummary = ({ data }) => {
 
   return (
-    <div className="profile-summary">
+    <section className="profile-summary">
       { data?.imageData ?
         <div className="profile-picture">
         <img src={data?.imageData?.imgSrc} alt={data?.imageData?.alt} />
@@ -14,7 +14,7 @@ const ProfileSummary = ({ data }) => {
         <h2>{data.userData.name}</h2>
         <p>{data.userData.bio}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

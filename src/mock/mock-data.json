@@ -39,8 +39,8 @@
         "status": "published"
       }
     ],
-    "header": "App Name",
-    "footer": "copyright company name"
+    "header": "First React App",
+    "footer": "© ComIT React Course Manitoba"
   },
   "code": 200,
   "status": "success"
