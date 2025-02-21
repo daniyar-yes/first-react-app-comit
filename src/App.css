@@ -5,23 +5,11 @@
   text-align: center;
 }
 
-.profile-summary {
-  display: flex;
-  justify-content: space-between;
-  /* gap: 15px; */
-  margin: auto;
-  max-width: 60vw;
-  
-}
-.profile-picture {
+.picture {
   border: 3px solid green;
   max-width: 150px;
   aspect-ratio: 3 / 4;
   border-radius: 15%;
-}
-
-.profile-description {
-  max-width: 175px;
 }
 
 .posts-container {
