@@ -20,10 +20,8 @@ const InputField = () => {
   }
 
   useEffect(() => {
-    console.log('comment that was sent to the BE:',comment)
+    // console.log('comment that was sent to the BE:',comment)
   }, [comment])
-
-console.log('is re-rendering?')
 
   
   return (
