@@ -1,21 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
-useEffect (() => {
-  async function fetchApi(){
-    try{
-      const response = await fetch('https://randomuser.me/api/');
-      
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    async function fetchApi() {
+      try {
+        const response = await fetch('https://randomuser.me/api/');
+        const data = await response.json();
+        setUserData(data);
+        console.log(data);
+      }
+      catch (error) {
+        console.log(error);
+      }
     }
-    catch (error){
-      console.log(error);
-    }
-  }
-  console.log('API calls go here');
-  
-  fetchApi()
-}, []);
+
+    fetchApi()
+  }, []);
 
   return <>Hello</>;
 }
