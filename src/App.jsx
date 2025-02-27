@@ -4,6 +4,8 @@ function App() {
 
   const [userData, setUserData] = useState({});
 
+  const displayName= userData ? userData.results[0].name.first : 'jhon';
+
   useEffect(() => {
     async function fetchApi() {
       try {
@@ -20,7 +22,7 @@ function App() {
     fetchApi()
   }, []);
 
-  return <>Hello</>;
+  return <p>Hello {displayName}</p>;
 }
 
 
