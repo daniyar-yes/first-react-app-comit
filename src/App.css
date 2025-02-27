@@ -4,36 +4,3 @@
   padding: 2rem;
   text-align: center;
 }
-
-.picture {
-  border: 3px solid green;
-  max-width: 150px;
-  aspect-ratio: 3 / 4;
-  border-radius: 15%;
-}
-
-.posts-container {
-  margin: auto;
-  max-width: 360px;
-}
-
-.posts-container ul {
-  list-style: none; /* Remove default bullets */
-  padding: 0;
-}
-
-.posts-container li {
-  position: relative;
-  padding-left: 20px; /* Space for the custom bullet */
-  display: flex;
-  flex-direction: column;
-}
-
-.posts-container li::before {
-  content: "\2022"; /* Unicode bullet, your custom marker */
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%); /* Center vertically relative to the li */
-  font-size: 1.2em; /* Adjust size if needed */
-}
