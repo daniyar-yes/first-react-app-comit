@@ -1,21 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from 'react';
 
 function App() {
 
-  useEffect(() => 
+  const [userData, setUserData] = useState({});
+
+  const displayName= userData ? userData.results[0].name.first : 'jhon';
+
+  useEffect(() => {
     async function fetchApi() {
       try {
-        const response = await fetch("https://randomuser.me/api/")
+        const response = await fetch('https://randomuser.me/api/');
+        const data = await response.json();
+        setUserData(data);
+        console.log(data);
       }
       catch (error) {
         console.log(error);
+      }
     }
-    // console.log("Hello");
-    fetchApi();
-}, []);
 
-  return <>Hello</>;
+    fetchApi()
+  }, []);
+
+  return <p>Hello {displayName}</p>;
 }
-  
+
+
+
 
 export default App;
