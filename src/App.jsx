@@ -1,10 +1,21 @@
 import { useEffect, useState } from 'react';
+import UserProfile from './components/UserProfile/UserProfile';
 
 function App() {
 
-  const [userData, setUserData] = useState({});
-
-  const displayName= userData ? userData.results[0].name.first : 'jhon';
+  const [userData, setUserData] = useState(null);
+  const displayName = userData ? userData?.results[0]?.name?.first : 'LOADING';
+  
+  const userProfileData = {
+    name: {
+      first: 'John',
+      last: 'Smith',
+      title: 'Mr'
+    },
+    id: '',
+    age: 1,
+  }
+  
 
   useEffect(() => {
     async function fetchApi() {
@@ -22,7 +33,12 @@ function App() {
     fetchApi()
   }, []);
 
-  return <p>Hello {displayName}</p>;
+  return (
+    <>
+    <p>{displayName}</p>
+    <UserProfile data={userProfileData} />
+    </>
+  );
 }
 
 
