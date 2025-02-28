@@ -23,7 +23,6 @@ function App() {
           age: data.results[0].dob.age || 'N/A',
         }
         setUserData(userProfileData);
-        console.log(userData);
       }
       catch (error) {
         console.log(error);
