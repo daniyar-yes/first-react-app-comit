@@ -4,17 +4,8 @@ import UserProfile from './components/UserProfile/UserProfile';
 function App() {
 
   const [userData, setUserData] = useState(null);
-  const displayName = userData ? userData?.results[0]?.name?.first : 'LOADING';
+  // const displayName = userData ? userData?.results[0]?.name?.first : 'LOADING';
   
-  const userProfileData = {
-    name: {
-      first: 'John',
-      last: 'Smith',
-      title: 'Mr'
-    },
-    id: '',
-    age: 1,
-  }
   
 
   useEffect(() => {
@@ -22,8 +13,16 @@ function App() {
       try {
         const response = await fetch('https://randomuser.me/api/');
         const data = await response.json();
-        setUserData(data);
-        console.log(data);
+        const userProfileData = {
+          name: {
+            first: data.results[0].name.first || 'N/A',
+            last: data.results[0].name.last || 'N/A',
+            title: data.results[0].name.title || 'N/A'
+          },
+          id: data.results[0].login.uuid || 'N/A',
+          age: data.results[0].dob.age || 'N/A',
+        }
+        setUserData(userProfileData);
       }
       catch (error) {
         console.log(error);
@@ -33,10 +32,14 @@ function App() {
     fetchApi()
   }, []);
 
+ 
+
+
   return (
     <>
-    <p>{displayName}</p>
-    <UserProfile data={userProfileData} />
+   
+    {/* <p>{displayName}</p> */}
+    <UserProfile data={userData} />
     </>
   );
 }
