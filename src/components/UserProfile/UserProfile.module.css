@@ -1,0 +1,23 @@
+.userImage {
+  width: 180px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.container {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.textContainer {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
