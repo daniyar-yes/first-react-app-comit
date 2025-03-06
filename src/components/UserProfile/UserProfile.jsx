@@ -3,7 +3,7 @@ import styles from "./UserProfile.module.css";
 
 const UserProfile = ({ data, isLoading, error }) => {
 
-    if (isLoading) {
+    if (isLoading || data === null) {
        return <div className={styles.loadingSpinner}></div>
     }
 
