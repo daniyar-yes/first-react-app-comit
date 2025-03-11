@@ -9,8 +9,19 @@ const GeoLocation = ({ data, isLoading, error }) => {
   if (error) {
     return <p>Sorry, error message says: {error}</p>;
   }
-
-  return <div>Hi Geo</div>;
+console.log(data);
+  return (
+  <div>
+    <p>{data.lat}</p>
+    <p>{data.lon}</p>
+    <div className={styles.visualsContainer}>
+    <img src="./src/assets/map.gif" alt="map" className={styles.mapImg}/>
+    <svg className={styles.mapSvg}>
+        <circle cx="0" cy="0" r="5" fill="blue" />
+    </svg>
+      </div>
+  </div>
+  )
 };
 
 export default GeoLocation;

@@ -26,7 +26,7 @@ const TimeLine = ({ data, isLoading, error }) => {
 
   return (
     <div className='container'>
-      <svg width={`${widthTotal + 30}`} height="100px">
+      <svg width={`${widthTotal + 30}`} height="100px" className={styles.timeLineSvg}>
         <path
           id="line"
           d={pathD}

@@ -17,3 +17,27 @@
   @-webkit-keyframes spin {
     to { -webkit-transform: rotate(360deg); }
   }
+
+  .mapImg{
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .visualsContainer{
+    position: relative;
+    width: 500px; 
+    height: 252px;
+  }
+
+  .mapSvg{
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+  }
