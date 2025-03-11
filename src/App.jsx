@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import UserProfile from "./components/UserProfile/UserProfile";
-import TimeLine from "./components/TimeLine";
-import GeoLocation from "./components/GeoLocation";
+import TimeLine from "./components/TimeLine/TimeLine";
+import GeoLocation from "./components/GeoLocation/GeoLocation";
 
 function App() {
   const [data, setData] = useState(null);
