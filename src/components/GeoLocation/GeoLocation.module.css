@@ -31,8 +31,8 @@
 
   .visualsContainer{
     position: relative;
-    width: 500px; 
-    height: 252px;
+    width: 350px; 
+    aspect-ratio: 2 / 1;
   }
 
   .mapSvg{
@@ -40,8 +40,8 @@
     z-index: 10;
     width: 72%;
     height: 72%;
-    top: 15px;
-    left: 91px;
+    top: 10px;
+    left: 63px;
   }
 
   .pin {
