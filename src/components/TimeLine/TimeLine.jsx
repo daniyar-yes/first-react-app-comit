@@ -1,19 +1,11 @@
 /* eslint-disable react/prop-types */
 import styles from "./TimeLine.module.css";
 
-const TimeLine = ({ data, isLoading, error }) => {
-  if (isLoading || data === null) {
-    return <div className={styles.loadingSpinner}></div>;
-  }
-
-  if (error) {
-    return <p>Sorry, error message says: {error}</p>;
-  }
+const TimeLine = ({ data }) => {
 
   const dob = `Born: ${data.dob.slice(0, 4)}`;
   const registered = `Registered:  ${data.registered.slice(0, 4)}`;
   const currentDayString = "Today";
-
   const birthTime = new Date(dob).getTime();
   const registeredTime = new Date(registered).getTime();
   const currentTime = new Date().getTime();
@@ -25,7 +17,6 @@ const TimeLine = ({ data, isLoading, error }) => {
   const pathD = `M 50 50 ${widthTotal} 50`;
 
   return (
-    <div className='container'>
       <svg width={`${widthTotal + 30}`} height="100px" className={styles.timeLineSvg}>
         <path
           id="line"
@@ -49,7 +40,6 @@ const TimeLine = ({ data, isLoading, error }) => {
           {currentDayString}
         </text>
       </svg>
-    </div>
   );
 };
 
