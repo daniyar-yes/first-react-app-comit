@@ -49,10 +49,12 @@ function App() {
     dob: data.results[0].dob.date,
     registered: data.results[0].registered.date,
   } : null;
-
+console.log(data)
   const mapsData = data ? {
     lat: data.results[0].location.coordinates.latitude,
     lon: data.results[0].location.coordinates.longitude,
+    city: data.results[0].location.city,
+
   } : null;
 
   return (
