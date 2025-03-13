@@ -68,11 +68,11 @@ function App() {
     return <p>Sorry, error message says: {error}</p>;
   }
   return (
-    <>
+    <div className="mainContainer">
       <UserProfile data={userData} />
       <TimeLine data={timeLineData} />
       <GeoLocation data={mapsData} />
-    </>
+    </div>
   );
 }
 
