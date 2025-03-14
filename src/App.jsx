@@ -1,42 +1,60 @@
 import "./App.css";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function App() {
   const canvasRef = useRef(null);
   const canvasContextRef = useRef(null);
-  useEffect(() => {
-    if (canvasRef.current) {
-      canvasContextRef.current = canvasRef.current.getContext("2d");
-      let ctx = canvasContextRef.current;
-      ctx.beginPath();
-      ctx.arc(95, 50, 80, 0, 2 * Math.PI);
-      ctx.stroke();
-    }
-  }, []);
+
+  let newX = 20;
+  let newY = 280;
+  
 
   const handleClick = () => {
     if (canvasRef.current) {
       canvasContextRef.current = canvasRef.current.getContext("2d");
       let ctx = canvasContextRef.current;
+
+      ctx.clearRect(0, 0, 500, 300);
+
       ctx.beginPath();
-      ctx.arc(95, 50, 800, 0, 2 * Math.PI);
+
+      ctx.arc(180, 130, 80, 0, 2 * Math.PI);
       ctx.stroke();
+
       ctx.fillStyle = "red";
       ctx.fillRect(10, 150, 200, 75);
-  }
-}
 
-const handleClear = () => {
-  if (canvasRef.current) {
-    canvasContextRef.current = canvasRef.current.getContext("2d");
-    let ctx = canvasContextRef.current;
-  ctx.clearRect(0,0, 100,150);
-}
-}
+      // Define a new path
+      ctx.beginPath();
+
+      // Set a start-point
+      ctx.moveTo(0, 0);
+
+      // Set an end-point
+      ctx.lineTo(500, 300);
+
+      // Stroke it (Do the Drawing)
+      ctx.stroke();
+
+      ctx.font = "70px Arial";
+      ctx.strokeText("Hello World", newX, newY);
+      newX = newX + 10;
+      newY = newY - 10;
+
+    }
+  };
+
+  const handleClear = () => {
+    if (canvasRef.current) {
+      canvasContextRef.current = canvasRef.current.getContext("2d");
+      let ctx = canvasContextRef.current;
+      ctx.clearRect(0, 0, 500, 300);
+    }
+  };
 
   return (
     <>
-    <div>Overlay</div>
+      <div>Overlay</div>
       <canvas
         ref={canvasRef}
         width="500px"
