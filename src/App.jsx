@@ -45,6 +45,10 @@ function App() {
       }
     : null;
 
+
+      const textContent= userData ? `${userData.name.title} ${userData.name.last} says hi` : 'hi';
+      const buttonText= userData ? `Greet ${userData.name.first}` : 'bye';
+
   const timeLineData = data
     ? {
         dob: data.results[0].dob.date,
@@ -69,7 +73,7 @@ function App() {
   }
   return (
     <div className="mainContainer">
-      <UserProfile data={userData} />
+      <UserProfile data={userData} textContent={textContent} buttonText={buttonText} />
       <TimeLine data={timeLineData} />
       <GeoLocation data={mapsData} />
     </div>

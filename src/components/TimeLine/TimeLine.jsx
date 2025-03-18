@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import RandomText from "../shared/RandomText/RandomText";
 import styles from "./TimeLine.module.css";
 
 const TimeLine = ({ data }) => {
@@ -16,7 +17,12 @@ const TimeLine = ({ data }) => {
   const finalRegX = (widthTotal * regX) / 100;
   const pathD = `M 50 50 ${widthTotal} 50`;
 
+
+  const textContent = 'Wow this user is old';
+  const buttonText = 'Get your DOB'
+
   return (
+    <>
       <svg width={`${widthTotal + 30}`} height="100px" className={styles.timeLineSvg}>
         <path
           id="line"
@@ -40,6 +46,10 @@ const TimeLine = ({ data }) => {
           {currentDayString}
         </text>
       </svg>
+      <RandomText textContent={textContent} buttonText={buttonText}/>
+
+
+      </>
   );
 };
 

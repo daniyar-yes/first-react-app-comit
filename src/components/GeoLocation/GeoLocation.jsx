@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import RandomText from "../shared/RandomText/RandomText";
 import styles from "./GeoLocation.module.css";
 
 const GeoLocation = ({ data }) => {
@@ -8,6 +9,9 @@ const GeoLocation = ({ data }) => {
 
   const xStart = `${50 + lonFactorX}%`;
   const yStart = `${50 - latFactorY}%`;
+
+  const textContent = `See ${data.city} on Google Maps`;
+  const buttonText = `Teleport to ${data.city}`
 
   return (
     <div>
@@ -31,6 +35,7 @@ const GeoLocation = ({ data }) => {
         </div>
         <p>📍City: {city}</p>
       </div>
+      <RandomText textContent={textContent} buttonText={buttonText}/>
     </div>
   );
 };
