@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useContext } from 'react';
-import { LevelContext } from '../LevelContext';
+import { LevelContext } from './LevelContext';
 
 export default function Heading({ children }) {
 
