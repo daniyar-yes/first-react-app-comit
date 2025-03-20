@@ -1,46 +1,25 @@
-import "./App.css";
-import MyButton from "./components/MyButton";
-import { useState } from "react";
+import Heading from "./components/Heading";
+import Section from "./components/Section";
 
-
-
-function App() {
-
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => {
-      setCount(count + 1)
-    }
-
-
-  const products = [
-    { title: 'Cabbage', isFruit: 1, id: 1 },
-    { title: 'Garlic', isFruit: false, id: 2 },
-    { title: 'Apple', isFruit: 0, id: 3 },
-  ];
-
-
-
-
-  const listItems = products.map(product =>
-    <li key={product.id}
-        style={{
-        color: product.isFruit ? 'magenta' : 'darkgreen'
-        }}>
-      {product.title}
-    </li>
-  );
-
-
+export default function Page() {
   return (
-    <>
-      <ul>{listItems}</ul>
-
-      <MyButton count={count} onClick={handleClick}/>
-      <MyButton count={count} onClick={handleClick}/>
-
-    </>
+    <Section level={1}>
+      <Heading >Title</Heading>
+      <Section level={2}>
+        <Heading >Heading</Heading>
+        <Heading >Heading</Heading>
+        <Heading >Heading</Heading>
+        <Section level={3}> 
+          <Heading >Sub-heading</Heading>
+          <Heading >Sub-heading</Heading>
+          <Heading >Sub-heading</Heading>
+          <Section level={4}>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+          </Section>
+        </Section>
+      </Section>
+    </Section>
   );
 }
-
-export default App
